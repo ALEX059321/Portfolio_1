@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+
+body {
+  font-family: Poppins, sans-serif;
+}
+h1,h2 {
+  font-family: Roboto, sans-serif;
+}
+
+body{
+  background-color: #5089df;}
