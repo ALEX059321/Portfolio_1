@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div>
     <CustomCursor />
-      <ParticlesBackground />
+      {/* <ParticlesBackground /> */}
         <Navbar />
         <Home />
         <About />

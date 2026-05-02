@@ -9,11 +9,13 @@ export default function ParticlesBackground ()  {
 
 
   useEffect(() => {
-  const canvas = canvasRef.current
+  const canvas = canvasRef.current;
+  if (!canvas) return;
 const ctx = canvas.getContext("2d");
 let particlesArray = [];
 const particleCount = 50;
 const colors = ["rgba(255,255,255,0.7)"];
+
 class Particle {
   constructor(){
     this.x = Math.random()*canvas.width;
@@ -41,15 +43,12 @@ class Particle {
  if(this.x < 0 ) this.x = canvas.width;
 if(this.x >  canvas.width) this.x = 0;
 if(this.y < 0 ) this.y = canvas.height;
-if(this.y >  canvas.height
-) this.y = 0;
+if(this.y >  canvas.height) this.y = 0;
 
 
 
 this.draw();
 }
-
-
 
 }
 
