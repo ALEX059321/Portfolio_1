@@ -11,6 +11,7 @@ const [forceVisible, setForceVisible] = useState(false);
 const lastScrollY = useRef(0);
 const timeId = useRef(null);
 
+
 useEffect(() => {
   const homeSection = document.querySelector("#home");
   const observer = new IntersectionObserver((
@@ -77,7 +78,7 @@ useEffect(() => {
 <div className="hidden lg:block">
   <a href="#contact"
   className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-5 py-2 rounded-full font-medium shadow-lg hover:opacity-90 transition-opacity duration-300">
-  Reach out
+  Reach out!!
   </a>
 </div>
 </nav>
