@@ -9,9 +9,14 @@ import Contact from './sections/Contact'
 import Footer from './sections/Footer'
 import About from './sections/About'
 import CustomCursor from './components/CustomCursor'
+import IntroAnimations from './components/IntroAnimations'
 
-const App = () => {
+export default function App(){ 
+  const [introDone, setIntroDone] = React.useState(false);
   return (
+    <> 
+    {!introDone && <IntroAnimations onfinish={() => setIntroDone(true)} />}
+      {introDone &&(
     <div>
     <CustomCursor />
       {/* <ParticlesBackground /> */}
@@ -23,8 +28,10 @@ const App = () => {
         <Testimonials />
         <Contact />
         <Footer />
+        
     </div>
+    )}
+    </>
   )
 }
 
-export default App
