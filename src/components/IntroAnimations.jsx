@@ -7,7 +7,7 @@ export default function IntroAnimations({onfinish}){
   const greetings = useMemo(() => [
     "Hello", "नमस्ते", "Hola", "Bonjour",
       "Ciao", "Olá", "Здравствуйте",
-      "Merhaba", "Γειά", "Hej", "Hallo", "Salam" , "ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ"
+      "Merhaba", "Γειά", "Hej", "Hallo", "Salam","ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ"
 
 
   ],[])
