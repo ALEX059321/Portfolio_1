@@ -20,7 +20,7 @@ if(index < greetings.length-1){
   const id = setInterval(() => setIndex((i) => i + 1), 180);
   return() => clearInterval(id);
 
-} else {
+}else {
   const t = setTimeout(() => setVisible(false), 400);
  return() => clearTimeout(t);
 }
