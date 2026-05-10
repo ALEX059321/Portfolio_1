@@ -15,11 +15,11 @@ export default function App(){
   const [introDone, setIntroDone] = React.useState(false);
   return (
     <> 
-    {/* {!introDone && <IntroAnimations onfinish={() => setIntroDone(true)} />}
-      {introDone &&( */}
+    {!introDone && <IntroAnimations onfinish={() => setIntroDone(true)} />}
+      {introDone &&(
     <div>
     <CustomCursor />
-      {/* <ParticlesBackground /> */}
+      <ParticlesBackground />
         <Navbar />
         <Home />
         <About />
@@ -30,7 +30,7 @@ export default function App(){
         <Footer />
         
     </div>
-    {/* )} */}
+    )} 
     </>
   )
 }
