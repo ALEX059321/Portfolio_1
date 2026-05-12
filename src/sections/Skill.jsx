@@ -2,12 +2,11 @@ import { BsJavascript } from "react-icons/bs";
 import { FaReact,FaNodeJs,FaGithub,FaHtml5,FaCss} from "react-icons/fa6";
 import { SiTailwindcss,SiMongodb,SiPostman,SiExpress } from "react-icons/si";
 import { motion, useMotionValue } from "framer-motion";
-import { div } from "framer-motion/client";
 import { useEffect, useRef, useState } from "react";
 
 
 
-export default function skill(){
+export default function Skill(){
    const skill = [
      { icon: <FaHtml5 />, name: "HTML" },
     { icon: <FaCss />, name: "CSS" },
@@ -22,7 +21,7 @@ export default function skill(){
     { icon: <SiMongodb />, name: "Mongodb" },
     
   ];
-  const repeated = [...skill , ...skill ]
+  const repeated = [...skill, ...skill, ...skill]
   const [dir , setDir] = useState(-1)
   const [active , setActive] = useState(false);
   const sectionRef = useRef(null);
@@ -37,9 +36,8 @@ useEffect(()=> {
         [entry]) => {
             setActive(entry.isIntersecting && entry.intersectionRatio > 0.1);
         },
-    
+        { threshold: [0.1] }
     )
-    { threshold : [0.1]}
     io.observe(el);
     return () => io.disconnect();
     
@@ -48,19 +46,45 @@ useEffect(()=> {
 
 useEffect(() => {
     if(!active) return;
-    const onWheel = (el) => setDir(el.DeltaY > 0 ? -1 : 1);
+    const onWheel = (e) => setDir(e.deltaY > 0 ? -1 : 1);
     const onTouchStart = (e) => (touchY.current = e.touches[0].clientY);
     const onTouchMove = (e) => {
         if(touchY.current == null) return;
         const delta = e.touches[0].clientY - touchY.current;
         setDir( delta > 0 ? 1 : -1);
-        touchY.current = e.touch[0].clientY; 
-    }
+        touchY.current = e.touches[0].clientY; 
+    };
+    window.addEventListener('wheel' , onWheel , {passive : true});
+    window.addEventListener('touchstart' , onTouchStart , {passive : true});
+    window.addEventListener('touchmove' , onTouchMove , {passive : true});
+    
    
 
-})
+}, [active]);
 
+useEffect(() => {
+    let id;
+    let last = performance.now();
+    const SPEED = 80;
 
+    const tick = (now) => {
+        const dt = (now - last) / 1000;
+        last = now;
+        let next = X.get() + SPEED * dir * dt;
+        const loop = trackRef.current?.scrollWidth / 3 || 0;
+
+        if (loop) {
+            if (next <= -loop) next += loop;
+            else if (next >= 0) next -= loop;
+        }
+        X.set(next);
+        id = requestAnimationFrame(tick);
+    };
+
+    id = requestAnimationFrame(tick);
+
+    return () => cancelAnimationFrame(id);
+}, [dir, X]);
     return(
         <section id = "skill" 
         ref={sectionRef}
@@ -98,10 +122,11 @@ useEffect(() => {
 <div className="relative w-full overflow-hidden">
     <motion.div 
     ref={trackRef}
-    className="flex gap-10 text-6xl text-[#1cd8d2]">
+    style={{ x: X }}
+    className="flex gap-20 text-6xl text-[#1cd8d2]">
 {repeated.map((s,i) => (
     <div
-    key={i} className="flex flex-col items-center gap-2 min-w0[120px]" aria-lable = {s.name} title={s.name}
+    key={i} className="flex flex-col items-center gap-2 min-w0[120px]" aria-label = {s.name} title={s.name}
     >
         <span className="hover:scale-125 transition-transform duration-300">
         {s.icon}
