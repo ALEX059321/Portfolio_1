@@ -4,7 +4,6 @@ import ParticlesBackground from './components/ParticlesBackground'
 import Home from './sections/Home'
 import Skill from './sections/Skill'
 import Projects from './sections/Projects'
-import Testimonials from './sections/Testimonials'
 import Contact from './sections/Contact'
 import Footer from './sections/Footer'
 import About from './sections/About'
@@ -25,7 +24,7 @@ export default function App(){
         <About />
         <Skill />
         <Projects />
-        <Testimonials />
+        
         <Contact />
         <Footer />
         
