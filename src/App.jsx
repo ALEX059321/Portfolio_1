@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import ParticlesBackground from './components/ParticlesBackground'
 import Home from './sections/Home'
-import Skill from './sections/Skill'
+import Skill from './sections/Skills'
 import Projects from './sections/Projects'
 import Contact from './sections/Contact'
 import Footer from './sections/Footer'
@@ -14,8 +14,8 @@ export default function App(){
   const [introDone, setIntroDone] = React.useState(false);
   return (
     <> 
-    {/* {!introDone && <IntroAnimations onfinish={() => setIntroDone(true)} />}
-      {introDone &&( */}
+    {!introDone && <IntroAnimations onfinish={() => setIntroDone(true)} />}
+      {introDone &&(
     <div>
     <CustomCursor />
       <ParticlesBackground />
@@ -29,7 +29,7 @@ export default function App(){
         <Footer />
         
     </div>
-    {/* )}  */}
+     )}  
     </>
   )
 }

@@ -35,20 +35,20 @@ export default function Projects () {
   const projects = useMemo(
     () => [
       {
-        title: "nk studio",
-        link: "https://www.nk.studio/",
+        title: "GamesHub",
+        link: "https://games-hub-drab.vercel.app/",
         bgColor: "#0d4d3d",
         image: isMobile ? photo1 : img1, // use mobile or desktop image
       },
       {
-        title: "Gamily",
-        link: "https://gamilyapp.com/",
+        title: "Text-editor",
+        link: "https://text-editor-teal-ten.vercel.app/",
         bgColor: "#3884d3",
         image: isMobile ? photo2 : img2,
       },
       {
-        title: "Hungry Tiger",
-        link: "https://www.eathungrytiger.com/",
+        title: "Campus Help Desk",
+        link: "https://campus-help-desk-frontend.vercel.app/",
         bgColor: "#dc9317",
         image: isMobile ? photo3 : img3,
       },

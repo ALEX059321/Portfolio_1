@@ -26,7 +26,6 @@ const [index, setIndex] = React.useState(0);
 const [subIndex, setSubIndex] = React.useState(0);
 const [deleting, setDeleting] = React.useState(false);
 
-
 React.useEffect(() => {
  const current = roles[index];
  const timeout = setTimeout(() => {

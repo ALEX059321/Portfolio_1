@@ -27,24 +27,23 @@ aria-label="close menu">
 
 <ul className="space-y-6 text-center">
   {[
-    "Home",
-    "About",
-    "Skills",
-    "projects",
-
-    "Contact",
-  ].map((item, index) =>(
-    <motion.li key={item}
+    { label: "Home", id: "home" },
+    { label: "About", id: "about" },
+    { label: "Skills", id: "skill" },
+    { label: "projects", id: "projects" },
+    { label: "Contact", id: "contact" },
+  ].map(({label, id}, index) =>(
+    <motion.li key={label}
     initial={{ opacity : 0, y: 20}}
     animate={{ opacity : 1, y :0}}
     transition={{ delay: 0.3 + index * 0.1}}
     
     >
-      <a href={`#${item.toLowerCase()}`}
+      <a href={`#${id}`}
       onClick={onClose}
       className="text-4xl text-white font-semibold hover:text-pink-400 transition-colors duration-300"
       >
-      {item}
+      {label}
       </a>
     </motion.li>
     

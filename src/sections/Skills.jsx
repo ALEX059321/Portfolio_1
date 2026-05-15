@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 
 
-export default function Skill(){
+export default function Skills(){
    const skill = [
      { icon: <FaHtml5 />, name: "HTML" },
     { icon: <FaCss />, name: "CSS" },
