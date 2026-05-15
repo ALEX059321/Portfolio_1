@@ -31,7 +31,7 @@ aria-label="close menu">
     "About",
     "Skills",
     "projects",
-    "Testimonials",
+
     "Contact",
   ].map((item, index) =>(
     <motion.li key={item}
