@@ -5,6 +5,7 @@ import React from "react";
 import { useMemo } from "react";
 import { FaGithub, FaLinkedin, FaQuora} from "react-icons/fa";
 import avator from "../assets/avator.png";
+import Resume from "../assets/Resume.pdf";
 
 const socials = [
   {Icon : FaQuora ,lable : "X" , link : "https://www.quora.com/profile/Raj-Saroj-267"},
@@ -108,13 +109,8 @@ animate={{opacity:1}}
 transition={{delay: 0.8 , duration:0.8}}
 >
   <a href="#projects" className="px-6 py-3 rounded-full font-medium text-lg text-white bg-gradient-to-r from-[#1cd8d2] via-[#80bf8f] to-[#302b63] shadow-lg hover:scale-105 transition-all">View My Work</a>
-  <a href="#" className="px-6 py-3 rounded-full font-medium text-black bg-white hover:bg-gray-200 shadow-lg hover:scale-105 transition-all">My Resume
-  
-  </a>
- 
-  
+  <a href={Resume} download="Raj_Kumar_Resume.pdf" className="px-6 py-3 rounded-full font-medium text-black bg-white hover:bg-gray-200 shadow-lg hover:scale-105 transition-all">My Resume</a>
 </motion.div>
-
 
 <div className="mt-10 flex gap-5 text-2xl md:text-3xl justify-center lg:justify-start">
   {socials.map(({Icon, link, lable}) => (
