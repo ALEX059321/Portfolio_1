@@ -9,7 +9,7 @@ import Resume from "../assets/Resume.pdf";
 
 const socials = [
   {Icon : FaQuora ,lable : "X" , link : "https://www.quora.com/profile/Raj-Saroj-267"},
-  {Icon : FaLinkedin , lable : "LinkedIn" , link : "https://www.linkedin.com/in/raj-kumar-898007294"},
+  {Icon : FaLinkedin , lable : "LinkedIn" , link : ""},
   {Icon : FaGithub , lable : "GitHub" , link : "https://github.com/ALEX059321"}
 ]
 const glowVarients = {
